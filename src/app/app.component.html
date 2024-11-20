@@ -175,7 +175,61 @@
       margin-block: 1.5rem;
     }
   }
+
+  nav {
+    background-color: #f8f9fa;
+    padding: 10px;
+  }
+
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  nav ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #007bff;
+  }
+
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 3rem;
+  }
+
+  .content h1 {
+    margin-top: 1.75rem;
+  }
+
+  .content p {
+    margin-top: 1.5rem;
+  }
 </style>
+
+<nav>
+  <ul>
+    <li><a routerLink="/create">Crear Usuario</a></li>
+    <li><a routerLink="/read">Leer Usuarios</a></li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
+
+<!-- El contenido existente puede ir aquí -->
+<div class="content">
+  <h1>Bienvenido a la aplicación</h1>
+  <p>Utiliza los enlaces de navegación para crear o leer usuarios.</p>
+</div>
 
 <main class="main">
   <div class="content">

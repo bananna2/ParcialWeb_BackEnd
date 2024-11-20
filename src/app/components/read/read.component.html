@@ -1,0 +1,33 @@
+<div *ngIf="users.length > 0; else noUsers">
+  <table>
+    <thead>
+      <tr>
+        <th>Identificador</th>
+        <th>Valor</th>
+        <th>Nombre Contratante</th>
+        <th>Documento Contratante</th>
+        <th>Nombre Contratantista</th>
+        <th>Documento Contratantista</th>
+        <th>Fecha Inicial</th>
+        <th>Fecha Final</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.identificador }}</td>
+        <td>{{ user.valor }}</td>
+        <td>{{ user.nombre_contratante }}</td>
+        <td>{{ user.documento_contratante }}</td>
+        <td>{{ user.nombre_contratantista }}</td>
+        <td>{{ user.documento_contratantista }}</td>
+        <td>{{ user.fecha_inicial | date }}</td>
+        <td>{{ user.fecha_final | date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #noUsers>
+  <p>No users found.</p>
+</ng-template>
+
+<div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
